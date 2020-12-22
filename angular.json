@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "nativity"
+  "defaultProject": "nativity",
+  "cli": {
+    "analytics": false
+  }
 }

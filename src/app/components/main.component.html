@@ -1,0 +1,14 @@
+<div class="container ">
+
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <div class="form-group">
+        <label class="fs-3">Message To Write on Card:</label>
+        <input type="text" class="form-control" formControlName="message" placeholder="message">
+    </div>
+
+    <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Submit</button>
+    </div>
+</form>
+
+</div>
