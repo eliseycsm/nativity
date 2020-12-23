@@ -118,8 +118,8 @@ export class ScreenMapper{ //split game screen into columns and rows, position i
         const text = this.config.scene.add.text(0, 0 ,msg,
             {
                 fontFamily: 'Mountains of Christmas',
-                fontSize: '5em',
-                color: '#187219'
+                fontSize: '6em',
+                color: '#0d3010'
             }
             )
         this.placeObjectAt(x, y, text)

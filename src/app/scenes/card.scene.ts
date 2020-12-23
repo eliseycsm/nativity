@@ -43,8 +43,8 @@ export class CardScene extends Scene{
         //create screenMapper
         const mapper = new ScreenMapper({
             scene: this,
-            columns: 11,
-            rows: 11
+            columns: 15,
+            rows: 7
         })
 
         //return img to do adjustments to it eg. rotation
@@ -58,7 +58,7 @@ export class CardScene extends Scene{
         //bkg.rotation = Phaser.Math.DegToRad(45)
 
         //klee
-        mapper.placeImageAt(5,5, SNOW_BG)
+        mapper.placeImageAt(7,3, SNOW_BG)
 
         //add gridlines to screen for easier positioning
         //mapper.drawGrids()
@@ -78,21 +78,18 @@ export class CardScene extends Scene{
             repeat: -1
         })
 
-        //add game physics to sprite
-
-
         //place sprite animation and play animations
-        let sprite = mapper.placeSpriteAt(10,9, IMG_PIXEL_KLEE, {scaleToHeight: 0.2})
+        let sprite = mapper.placeSpriteAt(14,6, IMG_PIXEL_KLEE, {scaleToHeight: 0.2})
         sprite.play(ANIMS_PIXEL_KLEE)
-        sprite.y += 10
+        sprite.y -= 20  
 
-        this.padoru = mapper.placeSpriteAt(1,8, IMG_PADORU, {scaleToHeight: 0.25})
+        this.padoru = mapper.placeSpriteAt(1,5, IMG_PADORU, {scaleToHeight: 0.25})
         this.padoru.y += 20
         this.padoru.play(ANIMS_PADORU)
 
         const music = this.sound.add(AUDIO_KLEE, 
             { volume: 0.6, loop: true })
-        music.play()
+        music.pause()
 
         //create an animation
         this.anims.create({
@@ -106,20 +103,21 @@ export class CardScene extends Scene{
         })
 
         //place text
-        let text = mapper.placeTextAt(1,5, this.gameSvc.message)
-        text.x += 30
+        let text = mapper.placeTextAt(3,3, this.gameSvc.message.toUpperCase())
+        text.x -= 50
+        text.y += 10
 
         
     }
     //game loop
     update(){//the longer u update the slower the game
         //60fps means update is executed 60 times per secs
-        const dist = 5
-        if (this.moveRight && this.padoru.x <= 650 ){
+        const dist = 10
+        if (this.moveRight && this.padoru.x <= 1050 ){
             this.padoru.x += dist
         }else{
             this.padoru.x -= dist
-            this.moveRight = this.padoru.x <= 150
+            this.moveRight = this.padoru.x <= 250
 
         }
 

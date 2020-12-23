@@ -9,7 +9,7 @@ export class GameService{
     message: string
     constructor(){}
 
-    createGame(width = 800, height = 600){//takes in width and height of screen
+    createGame(width = 1280, height = 720){//takes in width and height of screen
         if (this.created)
             return
         //create the game
