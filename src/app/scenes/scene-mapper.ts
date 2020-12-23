@@ -1,7 +1,6 @@
 //helper tool to draw grid lines on scene; making img positioning easier
 
 import { Scene } from 'phaser'
-import { config } from 'rxjs'
 
 export interface SceneMapperConfig{
     scene: Scene,
@@ -51,9 +50,9 @@ export class ScreenMapper{ //split game screen into columns and rows, position i
         }
 
         if('scaleToHeight' in options) {
-            img.displayHeight = Math.floor(this.scrnHeight * options['scaleToWidth'])
+            img.displayHeight = Math.floor(this.scrnHeight * options['scaleToHeight'])
             //maintain aspect ratio
-            img.scaleX = img.scaleY //since we alr adjusted the width
+            img.scaleX = img.scaleY //since we alr adjusted the height
         }
         this.placeObjectAt(x, y, img)
         return img
@@ -102,9 +101,9 @@ export class ScreenMapper{ //split game screen into columns and rows, position i
         }
 
         if('scaleToHeight' in options) {
-            obj.displayHeight = Math.floor(this.scrnHeight * options['scaleToWidth'])
+            obj.displayHeight = Math.floor(this.scrnHeight * options['scaleToHeight'])
             //maintain aspect ratio
-            obj.scaleX = obj.scaleY //since we alr adjusted the width
+            obj.scaleX = obj.scaleY //since we alr adjusted the height
         }
     }
     placeSpriteAt(x, y, key: string, options: any = {}){
@@ -120,7 +119,7 @@ export class ScreenMapper{ //split game screen into columns and rows, position i
             {
                 fontFamily: 'Mountains of Christmas',
                 fontSize: '5em',
-                color: '#fff'
+                color: '#187219'
             }
             )
         this.placeObjectAt(x, y, text)

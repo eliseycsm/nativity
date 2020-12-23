@@ -26,3 +26,11 @@ export const AUDIO_AWAY_IN_A_MANGER = 'away_in_a_manger'
 export class Globals {
     static injector: Injector = null //static means there's only 1 copy of injector
 }
+
+//klee
+export const SNOW_BG = 'snow_bg'
+export const IMG_PIXEL_KLEE = 'pixel_klee'
+export const IMG_PADORU = 'padoru'
+export const ANIMS_PADORU = 'padoru'
+export const ANIMS_PIXEL_KLEE = 'pixel_klee'
+export const AUDIO_KLEE = 'klee_cut'
