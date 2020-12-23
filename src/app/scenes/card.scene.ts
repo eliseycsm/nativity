@@ -89,7 +89,7 @@ export class CardScene extends Scene{
 
         const music = this.sound.add(AUDIO_KLEE, 
             { volume: 0.6, loop: true })
-        music.pause()
+        music.play()
 
         //create an animation
         this.anims.create({
